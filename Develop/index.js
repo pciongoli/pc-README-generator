@@ -13,7 +13,7 @@ const questions = () => {
                 if (titleInput) {
                     return true;
                 } else {
-                    console.log('Please input the title of your project!');
+                    console.log('Please input the title of your proejct!');
                     return false;
                 }
             }
@@ -31,6 +31,32 @@ const questions = () => {
                 }
             }
         },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: 'Select a license for your project',
+            choices: ['']
+        },
+        {
+            type: 'input',
+            name: 'contributing',
+            message: 'Who is the author of this project?',
+            validate: contributingInput => {
+                if (contributingInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your name!')
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'Please provide instruction on any tests you have.',
+           
+        }
+        
         
    
     ])
