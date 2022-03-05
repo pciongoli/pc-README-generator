@@ -54,7 +54,12 @@ const questions = () => {
             type: 'input',
             name: 'tests',
             message: 'Please provide instruction on any tests you have.',
-           
+            default: false
+        },
+        {
+            type: '',
+            name: 'contact',
+            message: 'Enter '
         }
         
         
