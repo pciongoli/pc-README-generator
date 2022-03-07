@@ -73,7 +73,11 @@ promptUser()
 .then(generateREADME => {
     // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('.README.md', )
+    fs.writeFile('.README.md', generateMarkdown, err => {
+        if (err) throw new Error(err);
+
+        console.log('New Professional README.md has been generated. Check out README.md to see it.')
+    })
 }
 
 // TODO: Create a function to initialize app
