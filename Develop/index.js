@@ -33,6 +33,19 @@ const promptUser = () => {
             }
         },
         {
+            type: 'input',
+            name: 'description',
+            message: 'Give a description of your project.',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('Please input your project description!');
+                    return false;
+                }
+            }
+        },
+        {
             type: 'checkbox',
             name: 'license',
             message: 'Select a license for your project',
@@ -58,31 +71,31 @@ const promptUser = () => {
             default: false
         },
         {
-            type: '',
+            type: 'input',
             name: 'contact',
-            message: 'Enter '
+            message: 'Enter the best email to reach you.'
         }
         
-        
-   
-    ])
+    ]);
 
-};
+}
 
-promptUser()
-.then(generateREADME => {
-    // TODO: Create a function to write README file
+
 function writeToFile(fileName, data) {
     fs.writeFile('.README.md', generateMarkdown, err => {
         if (err) throw new Error(err);
 
-        console.log('New Professional README.md has been generated. Check out README.md to see it.')
-    })
+        console.log('New Professional README.md has been generated. Check out README.md in')
+    });
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    promptUser()
+    .then(userInput => {
+        return generateMarkdwon(userInput);
+    }); 
+}
 
 // Function call to initialize app
 init();
-})
