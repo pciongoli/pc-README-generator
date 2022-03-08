@@ -3,7 +3,8 @@
 [How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 
 ##Installation
-* In order to run this app you must first clone the repository from github. Once you have downloaded the file you can initiate the app by running node index.js in the terminal.
+* In order to run this app you must first clone the repository from github. Once you have downloaded the file navigate into the Develop folder of the file in your terminal. 
+* You can initiate the app by running node index.js in the terminal.
 * Once you run the app the user will be prompted with a series of questions. 
 * After answering each question your professional README.md will be generated.
 
