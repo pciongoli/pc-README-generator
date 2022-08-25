@@ -10,8 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/pciongoli/pc-README-generator.git"
   },
-  "author": "",
+  "author": "Patrick",
   "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "8.2.0"
+  },
   "bugs": {
     "url": "https://github.com/pciongoli/pc-README-generator/issues"
   },
