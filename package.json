@@ -1,23 +1,23 @@
 {
-  "name": "pc-readme-generator",
-  "version": "1.0.0",
-  "description": "[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pciongoli/pc-README-generator.git"
-  },
-  "author": "Patrick",
-  "license": "ISC",
-  "dependencies": {
-    "fs": "^0.0.1-security",
-    "inquirer": "8.2.0"
-  },
-  "bugs": {
-    "url": "https://github.com/pciongoli/pc-README-generator/issues"
-  },
-  "homepage": "https://github.com/pciongoli/pc-README-generator#readme"
+   "name": "pc-readme-generator",
+   "version": "1.0.0",
+   "description": "[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)",
+   "main": "index.js",
+   "dependencies": {
+      "inquirer": "^7.3.3",
+      "util": "^0.12.4"
+   },
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/pciongoli/pc-README-generator.git"
+   },
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/pciongoli/pc-README-generator/issues"
+   },
+   "homepage": "https://github.com/pciongoli/pc-README-generator#readme"
 }

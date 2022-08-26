@@ -1,21 +1,37 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require("fs");
-
 const path = require("path");
-// TODO: Create an array of questions for user input
-const promptUser = () => {
+const generateMarkdown = require("./utils/generateMarkdown");
+const util = require("util");
+const writeFileAsync = util.promisify(fs.writeFile);
+
+// Create an array of questions for user input
+function promptUser() {
    return inquirer.prompt([
       {
          type: "input",
          name: "title",
          message: "What is the title of your project?",
+         // implement validation to ensure user does not miss any important questions
          validate: (titleInput) => {
             if (titleInput) {
                return true;
             } else {
                console.log("Please input the title of your proejct!");
+               return false;
+            }
+         },
+      },
+      {
+         type: "input",
+         name: "technology",
+         message: "Please enter the technology you used to create this project",
+         validate: (titleInput) => {
+            if (titleInput) {
+               return true;
+            } else {
+               console.log("Please input the tech you used for your project!");
                return false;
             }
          },
@@ -79,18 +95,23 @@ const promptUser = () => {
          message: "Enter the best email to reach you.",
       },
    ]);
-};
-
-// created function to collect user input and write it to the file
-function writeToFile(fileName, data) {
-   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
-// TODO: Create a function to initialize app and generate the readme
-function init() {
-   promptUser().then((userInput) => {
-      writeToFile("./prod/README.md", generateMarkdown({ ...userInput }));
-   });
+async function init() {
+   try {
+      // prompt User questions
+      const answers = await promptUser();
+      // genereate users answers through
+      const generateREADME = generateMarkdown(answers);
+      // write README.me file inside of the dist folder/directory
+      await writeFileAsync("./dist/README.md", generateREADME);
+      // inform user if successfully created
+      console.log(
+         "New Professional README.md has been generated. Check out README.md in the 'dist' folder!"
+      );
+   } catch (err) {
+      console.log(err);
+   }
 }
 
 // Function call to initialize app
