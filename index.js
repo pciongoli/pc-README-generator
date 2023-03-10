@@ -18,7 +18,7 @@ function promptUser() {
             if (titleInput) {
                return true;
             } else {
-               console.log("Please input the title of your proejct!");
+               console.log("Please input the title of your project!");
                return false;
             }
          },
@@ -27,11 +27,13 @@ function promptUser() {
          type: "input",
          name: "technology",
          message: "Please enter the technology you used to create this project",
-         validate: (titleInput) => {
-            if (titleInput) {
+         validate: (technologyInput) => {
+            if (technologyInput) {
                return true;
             } else {
-               console.log("Please input the tech you used for your project!");
+               console.log(
+                  "Please input the technology you used for your project!"
+               );
                return false;
             }
          },
@@ -65,10 +67,10 @@ function promptUser() {
          },
       },
       {
-         type: "checkbox",
+         type: "list",
          name: "license",
          message: "Select a license for your project",
-         choices: [""],
+         choices: ["MIT", "Apache 2.0", "GPL", "BSD", "No License"],
       },
       {
          type: "input",
@@ -86,8 +88,8 @@ function promptUser() {
       {
          type: "input",
          name: "tests",
-         message: "Please provide instruction on any tests you have.",
-         default: false,
+         message: "Please provide instructions on any tests you have.",
+         default: "No tests available.",
       },
       {
          type: "input",
@@ -99,15 +101,15 @@ function promptUser() {
 
 async function init() {
    try {
-      // prompt User questions
+      // prompt user questions
       const answers = await promptUser();
-      // genereate users answers through
+      // generate README using user's answers
       const generateREADME = generateMarkdown(answers);
-      // write README.me file inside of the dist folder/directory
+      // write README.md file inside of the dist folder/directory
       await writeFileAsync("./dist/README.md", generateREADME);
       // inform user if successfully created
       console.log(
-         "New Professional README.md has been generated. Check out README.md in the 'dist' folder!"
+         "New professional README.md has been generated. Check out README.md in the 'dist' folder!"
       );
    } catch (err) {
       console.log(err);

@@ -1,19 +1,22 @@
-# PC-README-GENERATOR
+# New Project 
 
-  ##Technology
-    JavaScript, Node.js, Inquirer
+## Technology
+JavaScript Node.js
 
-  ##Installation
-    Clone the repo. Once cloned type npm install in the console to ensure you have all of the dependencies needed. Then, again in the console type in node index.js. You will be prompted with a series of questions pertaining to your brand new README.md file! After each question is answered, and no errors occur your brand new README.md file will be created and placed into the 'dist' directory for you to use! 
+## Installation
+Clone this repo. Open it in your IDE, from the terminal type 'npm install
 
-  ##Description
-    This project was built to ensure users can create a README.md file with ease!
+## Description
+project generates a readme.md file
 
-  ##Contributors
-  PCiongoli
+## Contributors
+me
 
-  ##Tests
-  false
+## Tests
+No tests available.
 
-  ##Contact Me
-    patrick.ciongoli@gmail.com
+## Contact Me
+me@email.com
+
+
+
